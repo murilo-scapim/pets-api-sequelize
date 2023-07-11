@@ -16,7 +16,13 @@ const getById = async (id) => {
   return owner;
 };
 
+const create = async ({ name, email }) => {
+  const owner = await Owner.create({ name, email });
+  return owner;
+};
+
 module.exports = {
   getAll,
   getById,
+  create,
 };

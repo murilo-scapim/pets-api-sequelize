@@ -19,7 +19,19 @@ const getById = async (req, res) => {
   }
 };
 
+const create = async (req, res) => {
+  try {
+    const { name, email } = req.body;
+    const owner = await OwnerService.create({ name, email });
+    return res.status(201).json(owner);
+  } catch (e) {
+    console.log(e);
+    return res.status(500).json({ message: 'Ocorreu um erro' });
+  }
+};
+
 module.exports = {
   getAll,
   getById,
+  create,
 };
