@@ -14,7 +14,7 @@ module.exports = (sequelize, DataTypes) => {
   });
 
   Owner.associate = (models) => {
-    Owner.hasMany(models.Pets,
+    Owner.hasMany(models.Pet,
       { foreignKey: 'ownerId', as: 'pets' });
   };
 
